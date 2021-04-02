@@ -27,6 +27,7 @@ export default class Output extends Component {
                                 <button className="update-button" onClick={()=>{
                                    this.props.stateValue.filter((content) => {
                                     this.props.updateValue(content.id)
+                                    this.props.modalValue(true)
                                         return true;
                                      });
                                 }}>Update</button>

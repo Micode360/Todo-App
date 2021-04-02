@@ -1,7 +1,6 @@
 import { Component } from "react"
 import Input from "./input"
 
-
 export default class Darshboard extends Component {
     render() {
         return (
