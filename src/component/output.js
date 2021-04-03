@@ -24,7 +24,7 @@ export default class Output extends Component {
                                      });
                                 }}>Delete</button>
                                 
-                                <button className="update-button" onClick={()=>{
+                                <button className="update-button" onClick={() => {
                                    this.props.stateValue.filter((content) => {
                                     this.props.updateValue(content.id)
                                     this.props.modalValue(true)

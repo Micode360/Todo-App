@@ -17,6 +17,7 @@ export default class Input extends Component {
             valueToUpdate: ''
         };
     }
+
     myChangeHandler = (event) => {
         this.setState({ text: event.target.value });
     }
@@ -49,11 +50,25 @@ export default class Input extends Component {
             this.setState({ valueToUpdate: getValueById})
     }
 
+
+    setUpdateToState = (val) => {
+        return this.state.value.forEach((item) => {
+           if(item.id === val.id){
+             item.text = val.value;
+                return true;
+           } 
+        })
+    }
+
+
+
     modalValue = (bool) => {
         this.setState({
             modalValue: bool
         })
     }
+
+
 
 
     render() {
@@ -80,6 +95,7 @@ export default class Input extends Component {
                     show={this.state.modalValue}
                     onHide={() => this.setState({ modalValue: false })}
                     valuetoupdate={this.state.valueToUpdate}
+                    setupdatetostate={this.setUpdateToState}
                 />
             </>
         );
