@@ -19,7 +19,10 @@ body{
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 25px;
 }
+
+
 
 
 form{
@@ -100,4 +103,11 @@ form{
 
 .update-textarea{
   margin-bottom: 30px;
+}
+
+
+@media(min-width:1125px){
+  /* .Form-and-output-container{
+    width: 15vw;
+  } */
 }

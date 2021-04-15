@@ -4,7 +4,7 @@ import Output from "./output"
 import { v4 as uuidv4 } from 'uuid';
 import moment from "moment"
 import MyVerticallyCenteredModal from "./modal"
-
+import AlertComponent from "./alert"
 
 
 export default class Input extends Component {
@@ -52,12 +52,15 @@ export default class Input extends Component {
 
 
     setUpdateToState = (val) => {
-        return this.state.value.forEach((item) => {
-           if(item.id === val.id){
-             item.text = val.value;
-                return true;
-           } 
-        })
+       if(val.value === "") return <AlertComponent message={'success'} style={{"display":"none"}}/>
+        else {
+            return this.state.value.forEach((item) => {
+                if(item.id === val.id){
+                item.text = val.value;
+                    return true;
+                } 
+            })
+        }
     }
 
 
@@ -73,6 +76,7 @@ export default class Input extends Component {
 
     render() {
 
+ 
         return (
             <>
                 <Form onSubmit={this.handleSubmit}>
@@ -96,6 +100,7 @@ export default class Input extends Component {
                     onHide={() => this.setState({ modalValue: false })}
                     valuetoupdate={this.state.valueToUpdate}
                     setupdatetostate={this.setUpdateToState}
+                    modalValue={this.modalValue}
                 />
             </>
         );

@@ -33,6 +33,8 @@ export default class MyVerticallyCenteredModal extends Component {
             return updateIdValue;
         }
 
+
+
         return (
             <Modal
                 show={this.props.show}
@@ -54,8 +56,9 @@ export default class MyVerticallyCenteredModal extends Component {
                                 defaultValue={textValue()[0]}
                                 onChange={this.handleChange}
                             />
-                        <button className="send" onClick={()=>{
-                            this.props.setupdatetostate({id: idValue()[0], value: this.state.updatedValue});
+                        <button className="send" onClick={()=> {
+                             this.props.setupdatetostate({id: idValue()[0], value: this.state.updatedValue});
+                            this.props.modalValue(false);
                         }}>Update</button>
                 </Modal.Body>
             </Modal>
