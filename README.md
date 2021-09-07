@@ -1,7 +1,7 @@
 # tdapp-stack
 
 ## Description
-A todo application created with React using class component and Node.js. Has authentication added to it to personalize user experience. It is actually an uncompleted project and not hosted. But the code speaks for itself.
+A simple todo app. I know this has become a popular thing every react developer creates so i decided to do mine. I used class components for this.
 
 ### Motivation
 Personal motivation.
